@@ -1,0 +1,29 @@
+[package]
+name = "ogg"
+edition = "2021"
+version = "0.9.1"
+authors = ["est31 <MTest31@outlook.com>"]
+description = "Ogg container decoder and encoder written in pure Rust"
+license = "BSD-3-Clause"
+keywords = ["ogg", "decoder", "encoder", "xiph"]
+documentation = "https://docs.rs/ogg/0.8.0"
+repository = "https://github.com/RustAudio/ogg"
+readme = "README.md"
+rust-version = "1.56.0"
+
+[lib]
+name = "ogg"
+
+[dependencies]
+
+[dev-dependencies]
+rand = "0.8"
+tokio = { version = "1", features = ["full"] }
+futures-util = "0.3"
+
+[features]
+async = ["futures-core", "futures-io", "tokio", "tokio-util", "bytes", "pin-project"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
